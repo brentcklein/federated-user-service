@@ -1,3 +1,7 @@
+type Query @extends {
+    dummy: Boolean
+}
+
 type User @key(fields: "id") @extends {
     id: ID! @external
     fullName: String!

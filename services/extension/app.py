@@ -4,6 +4,8 @@ from ariadne.asgi import GraphQL
 
 from ariadne.contrib.federation import FederatedObjectType, make_federated_schema
 
+query_type = QueryType()
+
 user_type = FederatedObjectType('User')
 
 
@@ -14,7 +16,7 @@ def resolve_id(*_):
 
 @user_type.field('fullName')
 def resolve_fullname(obj, *_):
-    return "Full Name"
+    return f'{obj['firstName']} {obj['lastName']}'
 
 
 type_defs = load_schema_from_path('schema.graphql')

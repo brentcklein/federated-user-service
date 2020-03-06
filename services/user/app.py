@@ -4,7 +4,7 @@ from ariadne.asgi import GraphQL
 
 from ariadne.contrib.federation import FederatedObjectType, make_federated_schema
 
-query_type = FederatedObjectType('Query')
+query_type = QueryType()
 
 
 class User:
